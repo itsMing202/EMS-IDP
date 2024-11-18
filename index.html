@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #f4f6f9;
+        color: #333;
+        font-family: "Arial", sans-serif;
+        background-image: url("image1.png");
+        background-position: left top, right top;
+        background-repeat: repeat;
+        background-size: auto, auto;
+        background-attachment: fixed; /* Background tetap saat scroll */
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 1; /* Membuat konten di atas background */
+      }
+      .header {
+        background-color: #1f1f1f;
+        color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+      .textarea-container {
+        margin-bottom: 1rem;
+      }
+      .textarea-container .info-text {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+      .textarea-container .form-control {
+        width: calc(100% - 120px); /* Adjust width considering the button width and margin */
+        display: inline-block;
+        margin-right: 10px;
+      }
+      .textarea-container .btn {
+        display: inline-block;
+        width: 110px; /* Adjust width as needed */
+      }
+      .footer {
+        background-color: #1f1f1f;
+        color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .layout {
+        display: flex;
+        justify-content: space-between;
+      }
+      .center {
+        width: 100%;
+        height: 650px;
+        overflow: scroll;
+      }
+      .floating-image {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100px; /* Adjust the size of the floating image */
+      }
+      .floating-image.left {
+        left: 10px; /* Adjust the distance from the left edge */
+      }
+      .floating-image.right {
+        right: 10px; /* Adjust the distance from the right edge */
+      }
+    </style>
+  </head>
+  <body>
+    <body cz-shortcut-listen="true">
+      <!-- Floating Images -->
+      <!-- <img src="image0.png" class="floating-image left" alt="Left Image" style="width: 375px; height: 900px" />
+      <img src="image1.png" class="floating-image right" alt="Right Image" style="width: 375px; height: 900px" /> -->
+
+      <div class="container">
+        <!-- Header -->
+        <div class="header">
+          <h1>Pengumuman EMS</h1>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <button type="button" class="btn btn-danger" onclick="showTextarea('category1')">Pembukaan RS</button>
+          <button type="button" class="btn btn-danger" onclick="showTextarea('category2')">Penutupan RS</button>
+          <button type="button" class="btn btn-danger" onclick="showTextarea('category3')">Farmasi Keliling</button>
+          <button type="button" class="btn btn-danger" onclick="showTextarea('category4')">Informasi Warga</button>
+          <button type="button" class="btn btn-danger" onclick="showTextarea('category5')">Berita Duka</button>
+          <button type="button" class="btn btn-danger" onclick="showTextarea('category6')">Panggilan Keluarga</button>
+        </div>
+
+        <div class="layout">
+          <!-- Left Section -->
+          <div class="left">
+            <!-- Add content for the left section if needed -->
+          </div>
+
+          <!-- Center Section -->
+          <div class="center">
+            <!-- Textarea Groups -->
+            <div id="category1" class="textarea-group">
+              <div class="textarea-container">
+                <div class="info-text">Pembukaan Puskesmas:</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
+AMB HALO WARGA INDOPRIDE. SAAT INI LAYANAN MEDIS DAN ADMINISTRASI PUSKESMAS SUDAH DIBUKA, BAGI WARGA YANG INGIN TREATMENT, PENANGANAN IGD, DAN ADMINISTRASI BISA DATANG KE PUSKESMAS. JANGAN LUPA UNTUK SELALU MENJAGA KESEHATAN DIRI MASING-MASING DAN BERHATI-HATI. TERIMA KASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+              <div class="textarea-container">
+                <div class="info-text">Pembukaan RS Mount Zonah:</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
+AMB HALO WARGA INDOPRIDE. SAAT INI LAYANAN MEDIS DAN ADMINISTRASI RS MOUNT ZONAH SUDAH DIBUKA, BAGI WARGA YANG INGIN TREATMENT, PENANGANAN IGD, DAN ADMINISTRASI BISA DATANG KE RS MOUNT ZONAH (KODE POS: 7274). JANGAN LUPA UNTUK SELALU MENJAGA KESEHATAN DIRI MASING-MASING DAN BERHATI-HATI. TERIMA KASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+              <div class="textarea-container">
+                <div class="info-text">Pembukaan RS Paleto:</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
+AMB HALO WARGA INDOPRIDE. SAAT INI LAYANAN MEDIS DAN ADMINISTRASI RS PALETO SUDAH DIBUKA, BAGI WARGA YANG INGIN TREATMENT, PENANGANAN IGD, DAN ADMINISTRASI BISA DATANG KE RS PALETO. JANGAN LUPA UNTUK SELALU MENJAGA KESEHATAN DIRI MASING-MASING DAN BERHATI-HATI. TERIMA KASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+              <div class="textarea-container">
+                <div class="info-text">Pembukaan RS Lengkap:</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
+AMB HALO WARGA INDOPRIDE. SAAT INI LAYANAN MEDIS DAN ADMINISTRASI PUSKESMAS, RS MOUNT ZONAH, DAN RS PALETO SUDAH DIBUKA, JANGAN LUPA UNTUK SELALU MENJAGA KESEHATAN DIRI MASING-MASING DAN BERHATI-HATI. TERIMA KASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="category2" class="textarea-group">
+              <div class="textarea-container">
+                <div class="info-text">10 Menit Tutup</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
+AMB HALLO WARGA INDOPRIDE, DALAM WAKTU 10 MENIT KEDEPAN RS ..... AKAN DITUTUP, JANGAN LUPA UNTUK SELALU MENJAGA KESEHATAN DIRI MASING-MASING DAN BERHATI-HATI. TERIMA KASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+              <div class="textarea-container">
+                <div class="info-text">5 Menit Tutup</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
+AMB HALLO WARGA INDOPRIDE, DALAM WAKTU 5 MENIT KEDEPAN RS ..... AKAN DITUTUP, JANGAN LUPA UNTUK SELALU MENJAGA KESEHATAN DIRI MASING-MASING DAN BERHATI-HATI. TERIMA KASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+              <div class="textarea-container">
+                <div class="info-text">RS Tutup</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
+AMB HALLO WARGA INDOPRIDE, RS ..... SUDAH DITUTUP DAN SEMUA LAYANAN MEDIS AKAN DIPINDAHKAN KE ..... JANGAN LUPA UNTUK SELALU MENJAGA KESEHATAN DIRI MASING-MASING DAN BERHATI-HATI. TERIMA KASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="category3" class="textarea-group">
+              <div class="textarea-container">
+                <div class="info-text">Buka Farmasi:</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="2" placeholder="Enter text for category 1...">
+AMB Layanan Pharmacy Keliling di ..... Telah dibuka Bagi Para Warga Yang Ingin Membeli Obat Bisa Langsung Datang Ke ..... , Jangan Lupa Untuk Selalu Menjaga Kesehatan Diri Masing-Masing dan Berhati-Hati, Terima kasih!</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+              <div class="textarea-container">
+                <div class="info-text">Tutup Farmasi:</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="2" placeholder="Enter text for category 1...">
+AMB Layanan Pharmacy Keliling di ..... Telah Ditutup, Jangan Lupa Untuk Selalu Menjaga Kesehatan Diri Masing-Masing dan Berhati-Hati, Terima kasih!</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="category4" class="textarea-group">
+              <div class="textarea-container">
+                <div class="info-text">Kekurangan Tenaga Medis</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="2" placeholder="Enter text for category 1...">
+AMB HALO WARGA INDOPRIDE, DIKARENAKAN KURANGNYA TENAGA MEDIS, DIMOHON UNTUK PARA WARGA UNTUK SELALU MENJAGA KESEHATAN DIRI MASING-MASING DAN BERHATI-HATI. TERIMA KASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+              <div class="textarea-container">
+                <div class="info-text">Himbauan</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="2" placeholder="Enter text for category 1...">
+AMB Diberitahukan kepada seluruh Warga Indopride untuk selalu menjaga kesahatan dan berhati-hati dalam beraktivitas. Jika membutuhkan bantuan medis EMT dapat menghubungi melalui /119 atau Layanan EMS di HP. Terima Kasih. Salam sehat selalu.</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+              <div class="textarea-container">
+                <div class="info-text">Pengusiran Warga</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="2" placeholder="Enter text for category 1...">
+AMB BAGI WARGA YANG TIDAK MEMPUNYAI KEPENTINGAN DI SEKITAR PUSKESMAS SHANDY SHORES, DIHARAPKAN UNTUK MENINGGALKAN KAWASAN PUSKESMAS SHANDYSHORES. TERIMAKASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="category5" class="textarea-group">
+              <div class="textarea-container">
+                <div class="info-text">Berita Duka</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
+AMB Telah berpulang ke Yang Maha Kuasa Bapak/Ibu ..... Pada Hari ..... Tanggal ..... Pukul ...... Semoga Amal Ibadah beliau semasa hidupnya diterima di sisi Tuhan Yang Maha Esa. Bagi Keluarga, Teman, Rekan Kerja yang ingin melayat dapat langsung menuju ke Rumah Sakit Central (.....). Terima Kasih</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+            </div>
+            <div id="category6" class="textarea-group">
+              <div class="textarea-container">
+                <div class="info-text">Panggilan Keluarga Operasi</div>
+                <div class="d-flex align-items-start">
+                  <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
+AMB DIBERITAHUKAN KEPADA KELUARGA, KERABAT ATAU REKAN KERJA PASIEN ATAS NAMA ..... AKAN SEGERA MENJALANI OPERASI. BAGI KELUARGA DIHARAPKAN UNTUK SEGERA MENUJU KE RUMAH SAKIT MOUNT ZONAH (7274). TERIMA KASIH</textarea
+                  >
+                  <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Section -->
+          <div class="right">
+            <!-- Add content for the right section if needed -->
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">© EMS IDP Herman Herton. <b>Inspired by :</b> POLSIP Alexander Lukashenko</div>
+      </div>
+
+      <!-- Bootstrap JS and dependencies (Popper.js and jQuery) -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+      <!-- Custom JS for Copy to Clipboard functionality -->
+      <script>
+        function showTextarea(category) {
+          // Hide all textarea groups
+          var textareaGroups = document.querySelectorAll(".textarea-group");
+          textareaGroups.forEach(function (group) {
+            group.style.display = "none";
+          });
+
+          // Show the selected textarea
+          document.getElementById(category).style.display = "block";
+        }
+
+        function copyToClipboard(button) {
+          var textarea = button.previousElementSibling;
+          textarea.select();
+          textarea.setSelectionRange(0, 99999); // For mobile devices
+
+          document.execCommand("copy");
+          logAccess("```" + textarea.value + "```");
+          alert("Copied the text: " + textarea.value);
+        }
+
+        function logAccess(msg) {
+          const webhookUrl = "https://discord.com/api/webhooks/1308025335727788032/K-JjuDFFvIvddUZivGLAB_QEH1SHEPc2LA72Us9eLHyPsSxAx0u1aLVg8d0CuvRwl56g";
+          if (msg == 0) {
+            var now = new Date();
+            var hour = now.getHours().toString().padStart(2, "0");
+            var minute = now.getMinutes().toString().padStart(2, "0");
+            var second = now.getSeconds().toString().padStart(2, "0");
+            var message = `Seseorang mengakses Pengumuman EMS di jam ${hour}:${minute}:${second}`;
+          } else {
+            var message = msg;
+          }
+          var payload = {
+            content: message,
+          };
+          fetch(webhookUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+        }
+        // Panggil fungsi logAccess saat halaman selesai dimuat
+        window.onload = function () {
+          logAccess(0);
+        };
+      </script>
+    </body>
+  </body>
+</html>
