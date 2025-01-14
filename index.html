@@ -30,11 +30,11 @@
         color: #fff;
         padding: 20px;
         border-radius: 8px;
-        text-align: center;
+        text-align: center; 
         margin-bottom: 20px;
       }
       .header h1 {
-        margin: 0;
+        margin: 0;          
         font-size: 2rem;
       }
       .textarea-container {
@@ -61,7 +61,7 @@
         border-radius: 8px;
         text-align: center;
         margin-top: 20px;
-      }
+      }aW
       .layout {
         display: flex;
         justify-content: space-between;
@@ -286,7 +286,7 @@ AMB Telah berpulang ke Yang Maha Kuasa Bapak/Ibu _____ Pada Hari _____ Tanggal _
                 <div class="info-text">Panggilan Keluarga Operasi</div>
                 <div class="d-flex align-items-start">
                   <textarea class="form-control" rows="3" placeholder="Enter text for category 1...">
-AMB Diberitahukan Kepada Keluarga, Kerabat atau Rekan Kerja Pasien Atas Nama _____ Akan Segera Menjalai Operasi. Bagi Keluarga Diharapkan Untuk Segera Menuju ke Rumah Sakit Mount Zonah (Kode Pos: 7274). Terima Kasih</textarea
+AMB Diberitahukan Kepada Keluarga, Kerabat atau Rekan Kerja Pasien Atas Nama _____ Akan Segera Menjalani Operasi. Bagi Keluarga Diharapkan Untuk Segera Menuju ke Rumah Sakit Mount Zonah (Kode Pos: 7274). Terima Kasih</textarea
                   >
                   <button type="button" class="btn btn-info" onclick="copyToClipboard(this)">Copy to Clipboard</button>
                 </div>
@@ -340,7 +340,7 @@ AMB Diberitahukan Kepada Keluarga, Kerabat atau Rekan Kerja Pasien Atas Nama ___
             var minute = now.getMinutes().toString().padStart(2, "0");
             var second = now.getSeconds().toString().padStart(2, "0");
             var message = `Seseorang mengakses Pengumuman EMS di jam ${hour}:${minute}:${second}`;
-          } else {
+          } else {  
             var message = msg;
           }
           var payload = {
